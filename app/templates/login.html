@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block body %}
+{% if session['logged_in'] %}
+<p>You're logged in already!</p>
+{% else %}
+  {% if error %}
+<form action="/login" method="POST">
+    <div class="login">
+        <div class="login-screen">
+            <div class="app-title">
+    				<h1>Login</h1>
+    			</div>
+            <div class="login-form">
+                <div class="control-group">
+                    <p>
+                        <input type="username" name="username" placeholder="Username">
+                    </p>
+                </div>
+                <div class="control-group">
+                    <p>
+                        <input type="password" name="password" placeholder="Password">
+                    </p>
+                </div>
+                <p>
+                    <input type="submit" value="Log in" class="btn btn-primary btn-lg btn-block">
+                </p>
+                <br>
+                <p class=error><strong>Error:</strong> {{ error }}</p>
+            </div>
+        </div>
+    </div>
+  </form>
+  {% else %}
+<form action="/login" method="POST">
+    <div class="login">
+        <div class="login-screen">
+            <div class="app-title">
+    				<h1>Login</h1>
+    			</div>
+            <div class="login-form">
+                <div class="control-group">
+                        <input type="username" name="username" placeholder="Username">
+                </div>
+                <div class="control-group">
+                        <input type="password" name="password" placeholder="Password">
+                </div>
+                    <input type="submit" value="Log in" class="btn btn-primary btn-lg btn-block">
+            </div>
+        </div>
+    </div>
+  </form>
+  {% endif %}
+{% endif %}
+{% endblock %}
