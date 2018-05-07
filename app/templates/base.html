@@ -2,27 +2,33 @@
 <html lang="en">
   <head>
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani">
     <!-- Bootstrap core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="https://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
-  </head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+      html,body,jumbotron,article,aside,details,figcaption,figure,
+      footer,header,hgroup,main,menu,nav,section,summary{
+    font-family: 'Rajdhani', sans-serif;
+      }
+    </style>
+    </head>
   <body>
     <div class="container">
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
+            {% if session['logged_in'] == True %}
             <li role="presentation"><a href="/">Home</a></li>
             <li role="presentation"><a href="/about">About</a></li>
-            <li role="presentation"><a href="http://flask.pocoo.org" target="_blank">More About Flask</a></li>
+            <li role="presentation"><a href="/contact">Contact</a></li>
+            <li role="presentation"><a href="/logout">Logout</a></li>
+            {% endif %}
           </ul>
         </nav>
       </div>
       {% block body %}
       {% endblock %}
-      <footer class="footer">
-        <p>© 2016 Your Name Here</p>
-      </footer>
     </div> <!-- /container -->
   </body>
+  <footer class="container" style="text-align: center;">© 2018 Shaurita's Flask Demo</footer>
 </html>
