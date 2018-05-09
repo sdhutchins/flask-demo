@@ -4,9 +4,9 @@ This is a demo flask website that includes a login page.
 
 In order to log in, the `username` is `admin` and the `password` is `admin`.
 
-## Running this app locally
+## Running this site locally
 
-In order to run this app, follow the instructions below:
+In order to run this site, follow the instructions below:
 
 1. Download the [zip](https://github.com/sdhutchins/flask-demo/archive/master.zip)
 archive of this repository.
