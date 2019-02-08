@@ -19,3 +19,8 @@ archive of this repository.
 
 4. Go to your favorite web browser and type in `http://localhost:5000/`. From there,
 you can access this app.
+
+## ToDo
+
+- [ ] Add example for setting up a database.
+- [ ] Update css to Bootstrap 4.
