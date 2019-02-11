@@ -4,7 +4,7 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani">
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <!-- Add a favicon -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <style>
@@ -31,6 +31,6 @@
       {% block body %}
       {% endblock %}
     </div> <!-- /container -->
-  </body>
   <footer class="container" style="text-align: center;">© 2018 Shaurita's Flask Demo</footer>
+</body>
 </html>
