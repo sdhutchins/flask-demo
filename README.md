@@ -23,4 +23,4 @@ you can access this app.
 ## ToDo
 
 - [ ] Add example for setting up a database.
-- [ ] Update css to Bootstrap 4.
+- [x] Update css to Bootstrap 4.
