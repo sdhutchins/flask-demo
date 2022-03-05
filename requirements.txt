@@ -12,3 +12,4 @@ Jinja2
 MarkupSafe
 Werkzeug
 WTForms
+gunicorn
