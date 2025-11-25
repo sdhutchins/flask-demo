@@ -28,11 +28,12 @@ jobs:
     
     - name: Run tests with coverage
       run: |
-        pytest --cov=app --cov-report=xml --cov-report=term
+        pytest --cov=app --cov-branch --cov-report=xml --cov-report=term
     
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v4
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v5
       with:
+        token: ${{ secrets.CODECOV_TOKEN }}
         file: ./coverage.xml
         flags: unittests
         name: codecov-umbrella
