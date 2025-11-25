@@ -6,9 +6,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <!-- jQuery and Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <!-- Add a favicon -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <style>
@@ -16,25 +13,54 @@
       footer,header,hgroup,main,menu,nav,section,summary{
     font-family: 'Rajdhani', sans-serif;
       }
+      html, body {
+        height: 100%;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .container {
+        flex: 1;
+      }
     </style>
     </head>
   <body>
-    <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            {% if session['logged_in'] == True %}
-            <li role="presentation"><a href="/">Home</a></li>
-            <li role="presentation"><a href="/about">About</a></li>
-            <li role="presentation"><a href="/contact">Contact</a></li>
-            <li role="presentation"><a href="/logout">Logout</a></li>
-            {% endif %}
-          </ul>
-        </nav>
+    {% block navbar %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="{{ url_for('main.index') }}">Flask Demo</a>
+        {% if session.get('logged_in') %}
+        <div class="navbar-nav ml-auto">
+          <a class="nav-link" href="{{ url_for('main.index') }}">Home</a>
+          <a class="nav-link" href="{{ url_for('main.about') }}">About</a>
+          <a class="nav-link" href="{{ url_for('main.contact') }}">Contact</a>
+          <a class="nav-link" href="{{ url_for('main.logout') }}">Logout</a>
+        </div>
+        {% endif %}
       </div>
+    </nav>
+    {% endblock %}
+    <div class="container">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="alert alert-info alert-dismissible fade show" role="alert">
+            {% for message in messages %}
+              {{ message }}
+            {% endfor %}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        {% endif %}
+      {% endwith %}
       {% block body %}
       {% endblock %}
     </div> <!-- /container -->
   <footer class="container" style="text-align: center;">© 2018 Shaurita's Flask Demo</footer>
+    <!-- jQuery, Popper.js, and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 </body>
 </html>
