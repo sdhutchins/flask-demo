@@ -1,15 +1,2 @@
-Flask
-Flask-SQLAlchemy
-Flask-Script
-Flask-Cache
-Flask-Admin
-Flask-Mail
-Flask-Migrate
-Flask-Login
-Flask-WTF
-Flask-RESTful
-Jinja2
-MarkupSafe
-Werkzeug
-WTForms
-gunicorn
+Flask>=3.1.0
+python-dotenv>=1.0.0
