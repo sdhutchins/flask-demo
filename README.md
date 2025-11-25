@@ -2,23 +2,62 @@
 
 # flask-demo
 
-This is a demo flask website that includes a login page.
+This is a demo Flask website that includes a login page.
 
 In order to log in, the `username` is `admin` and the `password` is `admin`.
 
-## Running this site locally
+## Install & Setup
 
-In order to run this site, follow the instructions below:
+### Requirements
 
-1. Download the [zip](https://github.com/sdhutchins/flask-demo/archive/master.zip)
-archive of this repository.
+- Python 3.9 or newer
+- pip
 
-2. `cd flask-demo`
+### Instructions
 
-3. `python run.py`
+1. Clone or download this repository:
+   ```bash
+   git clone https://github.com/sdhutchins/flask-demo.git
+   cd flask-demo
+   ```
 
-4. Go to your favorite web browser and type in `http://localhost:5000/`. From there,
-you can access this app.
+2. Create a virtual environment (recommended):
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. (Optional) Create a `.env` file for environment variables:
+   ```bash
+   FLASK_DEBUG=True
+   SECRET_KEY=your-secret-key-here
+   ```
+   If no `.env` file is present, the app will use default values.
+
+## Usage
+
+### Running the Development Server
+
+Run the application using one of the following methods:
+
+#### Method 1: Using run.py
+
+```bash
+python run.py
+```
+
+#### Method 2: Using Flask CLI
+
+```bash
+flask run
+```
+
+The application will be available at `http://localhost:5000/`.
 
 ## ToDo
 
