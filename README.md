@@ -1,5 +1,5 @@
 [![This package is currently under development.](https://img.shields.io/badge/under-development-orange.svg)](https://github.com/sdhutchins/flask-demo)
-[![codecov](https://codecov.io/gh/sdhutchins/flask-demo/branch/main/graph/badge.svg)](https://codecov.io/gh/sdhutchins/flask-demo)
+[![codecov](https://codecov.io/gh/sdhutchins/flask-demo/graph/badge.svg?token=C3EiDZ7VFf)](https://codecov.io/gh/sdhutchins/flask-demo)
 
 # flask-demo
 
