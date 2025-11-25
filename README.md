@@ -1,4 +1,5 @@
 [![This package is currently under development.](https://img.shields.io/badge/under-development-orange.svg)](https://github.com/sdhutchins/flask-demo)
+[![codecov](https://codecov.io/gh/sdhutchins/flask-demo/branch/main/graph/badge.svg)](https://codecov.io/gh/sdhutchins/flask-demo)
 
 # flask-demo
 
@@ -58,6 +59,22 @@ flask run
 ```
 
 The application will be available at `http://localhost:5000/`.
+
+## Tests
+
+Run tests with pytest:
+
+```bash
+pytest
+```
+
+Run tests with coverage report:
+
+```bash
+pytest --cov=app --cov-report=html
+```
+
+View the HTML coverage report by opening `htmlcov/index.html` in your browser.
 
 ## ToDo
 
