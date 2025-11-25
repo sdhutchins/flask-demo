@@ -5776,8 +5776,9 @@ button.close{
 }
 
 .login {
-  margin: 20px auto;
-  width: 300px;
+  margin: 20px 0;
+  max-width: 300px;
+  width: 100%;
 }
 
 .login-screen {
